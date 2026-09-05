@@ -20,54 +20,50 @@
     body {
       min-height: 100vh;
       font-family: Georgia, "Times New Roman", serif;
+      color: #24445d;
 
       background:
-        radial-gradient(
-          circle at top left,
-          #d8f4ff 0%,
-          #8bd4f5 30%,
-          #3b9ed0 65%,
-          #145b86 100%
+        linear-gradient(
+          135deg,
+          #dff6ff,
+          #a9ddf5,
+          #63b8df,
+          #247ba8
         );
 
-      color: #17324d;
-      padding: 25px 15px;
+      padding: 20px 12px;
       overflow-x: hidden;
     }
 
-    /* =========================
-       BACKGROUND BUBBLES
-    ========================== */
-
+    /* Dekorasi background */
     .bubble {
       position: fixed;
       border-radius: 50%;
       background: rgba(255,255,255,0.18);
-      pointer-events: none;
-      animation: float 8s infinite ease-in-out;
       z-index: -1;
+      animation: float 7s ease-in-out infinite;
     }
 
     .bubble:nth-child(1) {
       width: 130px;
       height: 130px;
-      top: 7%;
-      left: 4%;
+      left: 5%;
+      top: 8%;
     }
 
     .bubble:nth-child(2) {
-      width: 90px;
-      height: 90px;
+      width: 80px;
+      height: 80px;
+      right: 6%;
       top: 55%;
-      right: 5%;
       animation-delay: 2s;
     }
 
     .bubble:nth-child(3) {
       width: 55px;
       height: 55px;
-      bottom: 10%;
-      left: 12%;
+      left: 15%;
+      bottom: 8%;
       animation-delay: 4s;
     }
 
@@ -77,26 +73,21 @@
       }
 
       50% {
-        transform: translateY(-25px);
+        transform: translateY(-20px);
       }
     }
 
-    /* =========================
-       CONTAINER
-    ========================== */
-
+    /* Container */
     .container {
-      width: 100%;
       max-width: 850px;
       margin: auto;
-
-      animation: appear 1.5s ease;
+      animation: appear 1.2s ease;
     }
 
     @keyframes appear {
       from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(25px);
       }
 
       to {
@@ -105,105 +96,85 @@
       }
     }
 
-    /* =========================
-       HERO SNOOPY
-    ========================== */
-
+    /* Header */
     .hero {
-      position: relative;
-
       height: 350px;
-
+      position: relative;
       overflow: hidden;
 
-      border-radius: 30px 30px 0 0;
+      border-radius: 28px 28px 0 0;
 
-      background: #dff5ff;
+      background: #dff6ff;
 
       box-shadow:
-        0 15px 40px rgba(0, 50, 90, 0.25);
+        0 15px 40px rgba(0, 65, 100, 0.25);
     }
 
     .hero img {
       width: 100%;
       height: 100%;
-
       object-fit: cover;
-
       display: block;
     }
 
-    .hero-overlay {
+    .hero::after {
+      content: "";
       position: absolute;
-
       inset: 0;
 
       background:
         linear-gradient(
           to bottom,
-          rgba(0, 80, 130, 0.02),
-          rgba(0, 50, 90, 0.55)
+          rgba(0,0,0,0),
+          rgba(0,50,80,0.55)
         );
-
-      display: flex;
-
-      align-items: flex-end;
-
-      justify-content: center;
-
-      padding-bottom: 28px;
     }
 
-    .hero-title {
-      color: white;
+    .hero-text {
+      position: absolute;
+      z-index: 2;
+
+      bottom: 28px;
+      left: 20px;
+      right: 20px;
 
       text-align: center;
+      color: white;
 
       text-shadow:
-        0 3px 12px rgba(0,0,0,0.6);
+        0 3px 12px rgba(0,0,0,0.65);
     }
 
-    .hero-title h1 {
-      font-size: 40px;
-
+    .hero-text h1 {
+      font-size: 42px;
       font-weight: normal;
-
-      letter-spacing: 1px;
     }
 
-    .hero-title p {
+    .hero-text p {
+      margin-top: 8px;
+
       font-family: Arial, sans-serif;
-
       font-size: 12px;
-
-      letter-spacing: 3px;
-
-      margin-top: 10px;
+      letter-spacing: 4px;
     }
 
-    /* =========================
-       LETTER
-    ========================== */
-
+    /* Surat */
     .letter {
-      background: rgba(255,255,255,0.96);
-
-      padding: 45px;
+      background: rgba(255,255,255,0.97);
+      padding: 42px;
 
       box-shadow:
-        0 20px 55px rgba(0, 50, 90, 0.25);
+        0 15px 45px rgba(0, 65, 100, 0.20);
     }
 
     .intro {
       text-align: center;
-
       margin-bottom: 35px;
     }
 
     .heart {
-      font-size: 38px;
-
-      margin-bottom: 12px;
+      font-size: 36px;
+      margin-bottom: 10px;
 
       animation: heartbeat 2s infinite;
     }
@@ -219,75 +190,58 @@
     }
 
     .intro h2 {
+      font-size: 30px;
       color: #176c9e;
-
-      font-size: 29px;
-
       font-weight: normal;
     }
 
     .line {
       width: 70px;
-
       height: 2px;
 
-      background: #65b9e6;
+      background: #5ab2dc;
 
-      margin: 18px auto;
+      margin: 17px auto;
     }
 
-    /* =========================
-       CONTENT
-    ========================== */
-
+    /* Isi */
     .content {
       font-size: 17px;
-
-      line-height: 1.9;
+      line-height: 1.85;
     }
 
     .content p {
       margin-bottom: 20px;
     }
 
-    /* =========================
-       HIGHLIGHT
-    ========================== */
-
+    /* Highlight */
     .highlight {
       margin: 30px 0;
-
-      padding: 25px;
+      padding: 23px;
 
       border-left: 4px solid #329bd0;
 
-      background: #e8f7ff;
+      background: #e7f7ff;
 
       border-radius: 0 15px 15px 0;
 
-      font-size: 19px;
+      color: #185d83;
 
+      font-size: 18px;
       font-style: italic;
 
-      color: #155a82;
-
       box-shadow:
-        0 5px 20px rgba(30,130,180,0.08);
+        0 5px 18px rgba(30,130,180,0.08);
     }
 
-    /* =========================
-       FLOWER
-    ========================== */
-
-    .flower {
+    /* Gambar bunga */
+    .image-box {
       text-align: center;
-
-      margin: 35px 0;
+      margin: 32px 0;
     }
 
-    .flower img {
-      width: 220px;
-
+    .image-box img {
+      width: 230px;
       max-width: 70%;
 
       border-radius: 20px;
@@ -297,37 +251,32 @@
           0 10px 15px rgba(0,60,100,0.22)
         );
 
-      transition: transform .4s ease;
+      transition: 0.4s ease;
     }
 
-    .flower img:hover {
-      transform:
-        scale(1.05)
-        rotate(-2deg);
+    .image-box img:hover {
+      transform: scale(1.04) rotate(-2deg);
     }
 
-    /* =========================
-       PROMISE
-    ========================== */
-
+    /* Janji */
     .promise {
       margin: 35px 0;
 
-      padding: 28px;
+      padding: 28px 25px;
 
       background:
         linear-gradient(
           135deg,
-          #e8f7ff,
+          #e9f8ff,
           #c7ebfb
         );
 
+      border: 1px solid #a9dcf2;
+
       border-radius: 20px;
 
-      border: 1px solid #a8daf1;
-
       box-shadow:
-        0 8px 25px rgba(30,130,180,0.12);
+        0 8px 25px rgba(30,130,180,0.10);
     }
 
     .promise h3 {
@@ -335,62 +284,29 @@
 
       color: #176c9e;
 
-      font-size: 21px;
-
+      font-size: 22px;
       font-weight: normal;
 
       margin-bottom: 20px;
     }
 
     .promise p {
+      margin: 12px 0;
       text-align: center;
-
-      margin: 10px 0;
     }
 
-    /* =========================
-       ENDING CHARACTER
-    ========================== */
-
-    .ending-image {
-      text-align: center;
-
-      margin: 35px 0 20px;
-    }
-
-    .ending-image img {
-      width: 210px;
-
-      max-width: 65%;
-
-      border-radius: 25px;
-
-      filter:
-        drop-shadow(
-          0 12px 18px rgba(0,50,90,0.25)
-        );
-
-      transition: transform .5s ease;
-    }
-
-    .ending-image img:hover {
-      transform: translateY(-8px);
-    }
-
-    /* =========================
-       ENDING
-    ========================== */
-
+    /* Penutup */
     .ending {
       text-align: center;
+
+      margin-top: 30px;
 
       padding: 25px 10px;
 
       font-size: 18px;
+      line-height: 1.85;
 
-      line-height: 1.8;
-
-      color: #24536e;
+      color: #315c74;
     }
 
     .ending strong {
@@ -398,23 +314,38 @@
 
       margin-top: 18px;
 
-      font-size: 30px;
+      font-size: 29px;
 
       color: #176c9e;
 
       font-weight: normal;
     }
 
-    /* =========================
-       SIGNATURE
-    ========================== */
+    /* Gambar terakhir */
+    .ending-image {
+      text-align: center;
+      margin: 35px 0 10px;
+    }
 
+    .ending-image img {
+      width: 210px;
+      max-width: 65%;
+
+      border-radius: 24px;
+
+      filter:
+        drop-shadow(
+          0 12px 18px rgba(0,50,90,0.23)
+        );
+    }
+
+    /* Tanda tangan */
     .signature {
       text-align: right;
 
-      margin-top: 40px;
+      margin-top: 35px;
 
-      color: #6d8797;
+      color: #708997;
 
       font-style: italic;
 
@@ -425,56 +356,49 @@
       color: #176c9e;
     }
 
-    /* =========================
-       FOOTER
-    ========================== */
-
+    /* Footer */
     .footer {
+      padding: 20px;
+
       background: #eaf8ff;
 
-      padding: 22px;
-
-      border-radius: 0 0 30px 30px;
+      border-radius: 0 0 28px 28px;
 
       text-align: center;
 
       color: #52819a;
 
-      font-size: 13px;
-
       font-family: Arial, sans-serif;
+
+      font-size: 13px;
     }
 
-    /* =========================
-       MOBILE
-    ========================== */
-
+    /* HP */
     @media (max-width: 600px) {
 
       body {
-        padding: 10px;
+        padding: 8px;
       }
 
       .hero {
-        height: 260px;
+        height: 270px;
       }
 
-      .hero-title h1 {
-        font-size: 29px;
+      .hero-text h1 {
+        font-size: 30px;
       }
 
-      .hero-title p {
+      .hero-text p {
         font-size: 9px;
         letter-spacing: 2px;
       }
 
       .letter {
-        padding: 28px 22px;
+        padding: 28px 21px;
       }
 
       .content {
         font-size: 16px;
-
         line-height: 1.8;
       }
 
@@ -493,22 +417,17 @@
   </style>
 </head>
 
-
 <body>
 
-  <!-- Background decoration -->
-
   <div class="bubble"></div>
   <div class="bubble"></div>
   <div class="bubble"></div>
-
 
   <div class="container">
 
-
-    <!-- =====================================
-         HEADER - SNOOPY
-    ====================================== -->
+    <!-- =========================
+         SNOOPY
+    ========================== -->
 
     <div class="hero">
 
@@ -517,31 +436,26 @@
         alt="Snoopy dan Woodstock"
       >
 
-      <div class="hero-overlay">
+      <div class="hero-text">
 
-        <div class="hero-title">
+        <h1>
+          Untuk Kakak 💙
+        </h1>
 
-          <h1>
-            Untuk Kakak 💙
-          </h1>
-
-          <p>
-            DARI BAWEL
-          </p>
-
-        </div>
+        <p>
+          SEBUAH PESAN DARI HATI
+        </p>
 
       </div>
 
     </div>
 
 
-    <!-- =====================================
+    <!-- =========================
          SURAT
-    ====================================== -->
+    ========================== -->
 
     <div class="letter">
-
 
       <div class="intro">
 
@@ -560,41 +474,37 @@
 
       <div class="content">
 
-
         <p>
           Kakak, aku nggak tahu harus mulai dari mana.
           Mungkin ini adalah salah satu pesan paling berat
           yang pernah aku tulis.
         </p>
 
-
         <p>
-          Aku tahu kata <i>“maaf”</i> dari aku mungkin sudah
-          terlalu sering Kakak dengar sampai akhirnya terasa
-          nggak berarti lagi.
-          Aku berkali-kali melakukan kesalahan, meminta maaf,
-          berjanji akan berubah, tapi akhirnya aku mengulanginya lagi.
+          Aku sadar aku sudah terlalu banyak melakukan kesalahan.
+          Berkali-kali aku minta maaf, berjanji akan berubah,
+          tapi akhirnya aku mengulanginya lagi.
+          Mungkin Kakak sudah lelah membaca kata maaf dari aku.
         </p>
 
-
         <p>
-          Aku sadar, mungkin bukan cuma kesalahan aku yang membuat
-          Kakak lelah, tapi juga karena Kakak harus terus mendengar
-          janji dan kata maaf yang sama dari aku.
+          Aku nggak mau membela diri.
+          Aku tahu ada banyak janji yang aku buat sendiri,
+          tapi justru aku sendiri yang mematahkannya.
         </p>
-
 
         <p>
           Aku masih sayang sama Kakak.
-          Jujur, aku masih ingin berjuang dan memperbaiki semuanya.
-          Aku masih ingin kita tetap bersama.
+          Sampai sekarang aku masih ingin berjuang,
+          masih ingin memperbaiki semuanya,
+          dan masih ingin tetap bersama Kakak.
         </p>
 
-
         <p>
-          Tapi aku juga sadar, rasa sayang saja nggak cukup kalau
-          selama ini aku justru lebih sering menjadi alasan Kakak terluka.
-          Mungkin selama ini aku memang belum cukup baik untuk Kakak.
+          Tapi aku juga sadar kalau rasa sayang saja nggak cukup.
+          Kalau selama ini aku lebih sering membuat Kakak sakit
+          daripada membuat Kakak bahagia,
+          berarti masih banyak yang harus aku perbaiki dari diri aku.
         </p>
 
 
@@ -607,90 +517,78 @@
 
 
         <p>
-          Aku sempat melihat repostan Kakak tentang laki-laki
+          Aku sempat melihat repostan Kakak tentang seseorang
           yang lebih dewasa, tenang, dan nggak perlu membuktikan
           apa-apa kepada dunia.
         </p>
 
-
         <p>
-          Jujur, itu membuat aku berpikir banyak hal.
-          Mungkin memang ada banyak hal dalam diri aku
-          yang masih harus aku perbaiki.
+          Jujur, aku kepikiran banyak hal setelah melihatnya.
+          Mungkin memang aku belum menjadi seseorang seperti itu.
+          Mungkin aku masih harus banyak belajar untuk menjadi
+          pribadi yang lebih dewasa dan lebih tenang.
         </p>
 
 
-        <!-- =====================================
-             FLOWER IMAGE
-        ====================================== -->
+        <!-- =========================
+             POCOYO
+        ========================== -->
 
-        <div class="flower">
+        <div class="image-box">
 
           <img
             src="pocoyo.jfif"
-            alt="Karakter membawa bunga matahari"
+            alt="Pocoyo membawa bunga"
           >
 
         </div>
 
 
         <p>
-          Kalau memang Kakak sudah menemukan seseorang yang lebih baik,
-          aku akan mencoba mengikhlaskan.
-          Walaupun sebenarnya hati aku masih ingin Kakak tetap bersama aku.
+          Kalau akhirnya Kakak memilih untuk bersama orang lain,
+          aku akan berusaha belajar mengikhlaskan.
+          Walaupun jujur, aku masih sayang dan masih berharap
+          kita bisa memperbaiki semuanya.
         </p>
-
 
         <p>
           Aku nggak akan mengganggu Kakak dengan orang baru Kakak.
-          Aku nggak ingin merusak kebahagiaan Kakak.
+          Aku ingin Kakak bahagia dengan pilihan Kakak.
         </p>
-
 
         <p>
-          Aku cuma berharap dia bisa menjaga Kakak dengan baik,
-          menghargai Kakak, dan nggak memaksa Kakak melakukan
-          hal-hal yang nggak Kakak suka.
+          Kalau suatu hari Kakak membutuhkan tempat untuk cerita,
+          aku akan tetap ada selama Kakak nyaman.
+          Tapi aku juga akan belajar menghargai batasan Kakak
+          dan nggak memaksakan kehadiran aku.
         </p>
 
 
-        <p>
-          Kakak nggak terbiasa dengan rokok ataupun minuman seperti itu.
-          Bahkan Papa Kakak juga tidak merokok dan minum.
-          Aku cuma berharap siapa pun yang nantinya ada di samping Kakak
-          bisa menghargai pilihan dan batasan Kakak.
-        </p>
-
-
-        <!-- =====================================
+        <!-- =========================
              JANJI
-        ====================================== -->
+        ========================== -->
 
         <div class="promise">
 
           <h3>
-            Janji yang akan Bawel pegang 💙
+            Janji yang akan aku pegang 💙
           </h3>
 
-
           <p>
-            🤍 Bawel akan tetap tidak merokok.
+            🤍 Aku akan tetap tidak merokok.
           </p>
 
-
           <p>
-            🤍 Bawel tidak akan minum.
+            🤍 Aku tidak akan minum.
           </p>
 
-
           <p>
-            🤍 Bawel tidak akan mencari orang lain
+            🤍 Aku tidak akan mencari orang lain
             hanya untuk menggantikan Kakak.
           </p>
 
-
           <p>
-            🤍 Bawel akan belajar menjadi pribadi
+            🤍 Aku akan belajar menjadi pribadi
             yang lebih baik.
           </p>
 
@@ -698,67 +596,51 @@
 
 
         <p>
-          Kali ini aku ingin menepati janji-janji itu bukan supaya
-          Kakak kembali, tapi karena aku sadar aku harus berubah
-          untuk diriku sendiri.
-        </p>
-
-
-        <p>
-          Aku nggak mau lagi hanya mengatakan
+          Aku nggak mau lagi cuma bilang,
           <i>“aku akan berubah.”</i>
-          Kalau aku benar-benar berubah, biarlah Kakak melihatnya
-          dari tindakan aku, bukan dari janji yang aku ucapkan.
+          Kalau memang aku berubah, biarlah perubahan itu
+          terlihat dari tindakan aku, bukan dari janji yang
+          terus aku ulang.
         </p>
-
 
         <p>
-          Aku nggak tahu apakah setelah ini kita masih bisa menjadi
-          teman atau mungkin kita membutuhkan jarak.
-          Tapi aku berharap kita nggak berakhir dengan rasa benci.
+          Dan kalau setelah ini kita benar-benar nggak bisa
+          bersama lagi, aku cuma berharap kita nggak berakhir
+          dengan rasa benci.
         </p>
-
-
-        <p>
-          Kalau Kakak membutuhkan jarak,
-          aku akan menghargainya.
-          Kalau Kakak ingin melanjutkan hidup tanpa aku,
-          aku juga akan belajar menerima itu.
-        </p>
-
 
         <p>
           Terima kasih karena pernah menyayangi aku.
           Terima kasih karena pernah bertahan.
           Terima kasih karena pernah memberikan aku
-          begitu banyak kesempatan.
+          kesempatan berkali-kali.
         </p>
-
 
         <p>
           Maaf karena aku terlalu sering mengecewakan Kakak.
-          Maaf karena aku berkali-kali mematahkan janji yang aku buat sendiri.
           Maaf karena aku membuat Kakak lelah.
+          Dan maaf karena banyak kata-kata yang pernah aku
+          janjikan ternyata belum bisa aku tepati.
         </p>
 
 
-        <!-- =====================================
-             ENDING CHARACTER
-        ====================================== -->
+        <!-- =========================
+             BIBBLES
+        ========================== -->
 
         <div class="ending-image">
 
           <img
             src="bibbles.jfif"
-            alt="Karakter biru dengan pita"
+            alt="Bibbles"
           >
 
         </div>
 
 
-        <!-- =====================================
-             ENDING
-        ====================================== -->
+        <!-- =========================
+             PENUTUP
+        ========================== -->
 
         <div class="ending">
 
@@ -776,16 +658,15 @@
 
           <br>
 
-          Dan meskipun aku harus belajar mengikhlaskan,
-          sebagian dari hati aku masih berharap
-          kita bisa memperbaiki semuanya.
+          Semoga Kakak bahagia,
+          apa pun jalan yang akhirnya Kakak pilih.
 
         </div>
 
 
-        <!-- =====================================
-             SIGNATURE
-        ====================================== -->
+        <!-- =========================
+             TANDA TANGAN
+        ========================== -->
 
         <div class="signature">
 
@@ -796,22 +677,17 @@
 
         </div>
 
-
       </div>
 
     </div>
 
 
-    <!-- =====================================
-         FOOTER
-    ====================================== -->
-
     <div class="footer">
 
-      💙 Dari Bawel, untuk Kakak. 💙
+      💙 Untuk Kakak, dari seseorang yang pernah
+      sangat menyayangi Kakak. 💙
 
     </div>
-
 
   </div>
 
