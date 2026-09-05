@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Untuk Kakak 💙</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #24445d;
+
+      background:
+        linear-gradient(
+          135deg,
+          #dff6ff,
+          #a9ddf5,
+          #63b8df,
+          #247ba8
+        );
+
+      padding: 20px 12px;
+      overflow-x: hidden;
+    }
+
+    /* Dekorasi background */
+    .bubble {
+      position: fixed;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.18);
+      z-index: -1;
+      animation: float 7s ease-in-out infinite;
+    }
+
+    .bubble:nth-child(1) {
+      width: 130px;
+      height: 130px;
+      left: 5%;
+      top: 8%;
+    }
+
+    .bubble:nth-child(2) {
+      width: 80px;
+      height: 80px;
+      right: 6%;
+      top: 55%;
+      animation-delay: 2s;
+    }
+
+    .bubble:nth-child(3) {
+      width: 55px;
+      height: 55px;
+      left: 15%;
+      bottom: 8%;
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    /* Container */
+    .container {
+      max-width: 850px;
+      margin: auto;
+      animation: appear 1.2s ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Header */
+    .hero {
+      height: 350px;
+      position: relative;
+      overflow: hidden;
+
+      border-radius: 28px 28px 0 0;
+
+      background: #dff6ff;
+
+      box-shadow:
+        0 15px 40px rgba(0, 65, 100, 0.25);
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,0),
+          rgba(0,50,80,0.55)
+        );
+    }
+
+    .hero-text {
+      position: absolute;
+      z-index: 2;
+
+      bottom: 28px;
+      left: 20px;
+      right: 20px;
+
+      text-align: center;
+      color: white;
+
+      text-shadow:
+        0 3px 12px rgba(0,0,0,0.65);
+    }
+
+    .hero-text h1 {
+      font-size: 42px;
+      font-weight: normal;
+    }
+
+    .hero-text p {
+      margin-top: 8px;
+
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 4px;
+    }
+
+    /* Surat */
+    .letter {
+      background: rgba(255,255,255,0.97);
+      padding: 42px;
+
+      box-shadow:
+        0 15px 45px rgba(0, 65, 100, 0.20);
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .heart {
+      font-size: 36px;
+      margin-bottom: 10px;
+
+      animation: heartbeat 2s infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.12);
+      }
+    }
+
+    .intro h2 {
+      font-size: 30px;
+      color: #176c9e;
+      font-weight: normal;
+    }
+
+    .line {
+      width: 70px;
+      height: 2px;
+
+      background: #5ab2dc;
+
+      margin: 17px auto;
+    }
+
+    /* Isi surat */
+    .content {
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+    }
+
+    /* Highlight */
+    .highlight {
+      margin: 30px 0;
+      padding: 23px;
+
+      border-left: 4px solid #329bd0;
+
+      background: #e7f7ff;
+
+      border-radius: 0 15px 15px 0;
+
+      color: #185d83;
+
+      font-size: 18px;
+      font-style: italic;
+
+      box-shadow:
+        0 5px 18px rgba(30,130,180,0.08);
+    }
+
+    /* Gambar */
+    .image-box {
+      text-align: center;
+      margin: 32px 0;
+    }
+
+    .image-box img {
+      width: 230px;
+      max-width: 70%;
+
+      border-radius: 20px;
+
+      filter:
+        drop-shadow(
+          0 10px 15px rgba(0,60,100,0.22)
+        );
+
+      transition: 0.4s ease;
+    }
+
+    .image-box img:hover {
+      transform: scale(1.04) rotate(-2deg);
+    }
+
+    /* Janji */
+    .promise {
+      margin: 35px 0;
+
+      padding: 28px 25px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #e9f8ff,
+          #c7ebfb
+        );
+
+      border: 1px solid #a9dcf2;
+
+      border-radius: 20px;
+
+      box-shadow:
+        0 8px 25px rgba(30,130,180,0.10);
+    }
+
+    .promise h3 {
+      text-align: center;
+
+      color: #176c9e;
+
+      font-size: 22px;
+      font-weight: normal;
+
+      margin-bottom: 20px;
+    }
+
+    .promise p {
+      margin: 12px 0;
+      text-align: center;
+    }
+
+    /* Penutup */
+    .ending {
+      text-align: center;
+
+      margin-top: 30px;
+
+      padding: 25px 10px;
+
+      font-size: 18px;
+      line-height: 1.85;
+
+      color: #315c74;
+    }
+
+    .ending strong {
+      display: block;
+
+      margin-top: 18px;
+
+      font-size: 29px;
+
+      color: #176c9e;
+
+      font-weight: normal;
+    }
+
+    .ending-image {
+      text-align: center;
+      margin: 35px 0 10px;
+    }
+
+    .ending-image img {
+      width: 210px;
+      max-width: 65%;
+
+      border-radius: 24px;
+
+      filter:
+        drop-shadow(
+          0 12px 18px rgba(0,50,90,0.23)
+        );
+    }
+
+    /* Tanda tangan */
+    .signature {
+      text-align: right;
+
+      margin-top: 35px;
+
+      color: #708997;
+
+      font-style: italic;
+
+      line-height: 1.7;
+    }
+
+    .signature strong {
+      color: #176c9e;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 20px;
+
+      background: #eaf8ff;
+
+      border-radius: 0 0 28px 28px;
+
+      text-align: center;
+
+      color: #52819a;
+
+      font-family: Arial, sans-serif;
+
+      font-size: 13px;
+    }
+
+    /* Tampilan HP */
+    @media (max-width: 600px) {
+
+      body {
+        padding: 8px;
+      }
+
+      .hero {
+        height: 270px;
+      }
+
+      .hero-text h1 {
+        font-size: 30px;
+      }
+
+      .hero-text p {
+        font-size: 9px;
+        letter-spacing: 2px;
+      }
+
+      .letter {
+        padding: 28px 21px;
+      }
+
+      .content {
+        font-size: 16px;
+        line-height: 1.8;
+      }
+
+      .highlight {
+        font-size: 17px;
+      }
+
+      .promise {
+        padding: 22px 15px;
+      }
+
+      .ending strong {
+        font-size: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background -->
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+
+
+  <div class="container">
+
+    <!-- =========================
+         HEADER - SNOOPY
+    ========================== -->
+
+    <div class="hero">
+
+      <img
+        src="snoopy.jfif"
+        alt="Snoopy dan Woodstock"
+      >
+
+      <div class="hero-text">
+
+        <h1>
+          Untuk Kakak 💙
+        </h1>
+
+        <p>
+          SEBUAH PESAN DARI HATI
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         ISI SURAT
+    ========================== -->
+
+    <div class="letter">
+
+      <div class="intro">
+
+        <div class="heart">
+          🤍
+        </div>
+
+        <h2>
+          Kakak...
+        </h2>
+
+        <div class="line"></div>
+
+      </div>
+
+
+      <div class="content">
+
+        <p>
+          Kakak, aku nggak tahu harus mulai dari mana.
+          Mungkin ini adalah salah satu pesan paling berat
+          yang pernah aku tulis.
+        </p>
+
+        <p>
+          Aku sadar aku sudah terlalu banyak melakukan kesalahan.
+          Mungkin sudah nggak terhitung berapa kali aku membuat
+          Kakak kecewa, membuat Kakak sakit, lalu datang lagi
+          dengan kata maaf.
+        </p>
+
+        <p>
+          Aku minta maaf, kemudian berjanji akan berubah.
+          Tapi setelah itu aku justru mengulang kesalahan yang
+          sama. Aku mengerti kalau pada akhirnya Kakak lelah.
+          Mungkin Kakak juga sudah cape membaca kata "maaf"
+          dari aku, karena kata maaf itu terlalu sering aku
+          ucapkan tanpa diikuti perubahan yang benar-benar
+          Kakak bisa rasakan.
+        </p>
+
+        <p>
+          Ada banyak janji yang pernah aku buat untuk Kakak,
+          tapi justru aku sendiri yang mematahkan janji itu.
+          Aku nggak mau mencari alasan atau menyalahkan keadaan,
+          karena aku tahu kesalahan itu tetap menjadi tanggung
+          jawab aku.
+        </p>
+
+        <p>
+          Aku cuma ingin Kakak tahu satu hal:
+          <strong>aku masih sayang sama Kakak.</strong>
+        </p>
+
+        <p>
+          Sampai sekarang, perasaan itu masih ada.
+          Aku masih ingin berjuang, masih ingin memperbaiki
+          semuanya, dan masih ingin tetap sama Kakak.
+          Tapi aku juga sadar, rasa sayang saja nggak cukup
+          kalau aku masih menjadi alasan Kakak terluka.
+        </p>
+
+
+        <div class="highlight">
+
+          "Aku nggak mau cuma bilang akan berubah.
+          Kalau aku masih diberi kesempatan,
+          aku ingin membuktikannya lewat tindakan."
+
+        </div>
+
+
+        <p>
+          Aku sempat melihat repostan Kakak di Instagram tentang
+          seseorang yang lebih dewasa, tenang, dan punya pribadi
+          yang nggak perlu membuktikan apa pun kepada dunia.
+        </p>
+
+        <p>
+          Jujur, setelah melihatnya aku banyak berpikir.
+          Mungkin aku memang belum menjadi orang seperti itu.
+          Mungkin aku masih terlalu banyak melakukan kesalahan
+          dan masih terlalu jauh dari sosok yang Kakak butuhkan.
+        </p>
+
+        <p>
+          Tapi aku nggak mau langsung menganggap Kakak sudah
+          menemukan orang lain. Aku nggak tahu sebenarnya
+          apa yang Kakak rasakan atau siapa yang ada di hati
+          Kakak sekarang.
+        </p>
+
+
+        <!-- POCOYO -->
+
+        <div class="image-box">
+
+          <img
+            src="pocoyo.jfif"
+            alt="Pocoyo membawa bunga"
+          >
+
+        </div>
+
+
+        <p>
+          Kalau ternyata Kakak belum bersama siapa-siapa,
+          dan masih ada sedikit ruang atau kesempatan untuk aku,
+          aku benar-benar ingin menggunakan kesempatan itu
+          sebaik mungkin.
+        </p>
+
+        <p>
+          Aku nggak mau lagi mengandalkan kata-kata manis,
+          permintaan maaf, atau janji yang akhirnya aku langgar
+          sendiri. Aku mau belajar memperbaiki diri sedikit demi
+          sedikit dan membuktikan bahwa aku benar-benar serius.
+        </p>
+
+        <p>
+          Kalau Kakak masih mau memberikan aku kesempatan,
+          aku ingin tetap sama Kakak.
+          Aku ingin terus memilih Kakak dan berusaha
+          mempertahankan hubungan ini dengan cara yang lebih
+          dewasa.
+        </p>
+
+        <p>
+          Aku tahu mungkin Kakak nggak bisa langsung percaya
+          lagi. Dan aku nggak akan menyalahkan Kakak kalau
+          kepercayaan itu sudah hilang.
+          Kalau memang aku ingin mendapatkannya kembali,
+          biarlah waktu dan tindakan aku yang membuktikannya.
+        </p>
+
+        <p>
+          Aku juga nggak ingin memaksa Kakak.
+          Kalau Kakak memang sudah benar-benar lelah dan
+          memilih untuk pergi, aku akan berusaha menghargai
+          keputusan itu walaupun pasti nggak mudah buat aku.
+        </p>
+
+        <p>
+          Aku cuma berharap kalau akhirnya kita memang harus
+          berpisah, kita nggak berakhir dengan rasa benci.
+          Aku berharap kita masih bisa menjadi teman tanpa
+          saling membenci atau menyimpan dendam.
+        </p>
+
+        <p>
+          Aku juga nggak akan mengganggu kehidupan Kakak
+          ataupun memaksakan diri untuk selalu ada di dekat Kakak.
+          Kalau suatu hari Kakak membutuhkan tempat untuk cerita,
+          aku akan tetap ada selama Kakak masih merasa nyaman.
+          Tapi aku juga akan belajar menghargai batasan Kakak.
+        </p>
+
+
+        <!-- =========================
+             JANJI
+        ========================== -->
+
+        <div class="promise">
+
+          <h3>
+            Janji yang akan aku pegang 💙
+          </h3>
+
+          <p>
+            🤍 Aku akan tetap tidak merokok.
+          </p>
+
+          <p>
+            🤍 Aku tidak akan minum.
+          </p>
+
+          <p>
+            🤍 Aku tidak akan mencari orang lain
+            hanya untuk menggantikan Kakak.
+          </p>
+
+          <p>
+            🤍 Aku akan belajar menjadi pribadi
+            yang lebih baik.
+          </p>
+
+        </div>
+
+
+        <p>
+          Aku nggak mau lagi membuat janji hanya supaya
+          Kakak percaya dan kemudian aku sendiri yang
+          mengingkarinya.
+        </p>
+
+        <p>
+          Kalau aku bilang ingin berubah, maka aku harus
+          benar-benar berubah. Bukan hanya ketika takut
+          kehilangan Kakak, tapi juga ketika nggak ada
+          yang melihat.
+        </p>
+
+        <p>
+          Aku ingin menjadi seseorang yang lebih dewasa,
+          lebih tenang, lebih bisa menjaga perasaan Kakak,
+          dan lebih bisa bertanggung jawab atas perkataan
+          serta perbuatan aku.
+        </p>
+
+        <p>
+          Kalau akhirnya Kakak masih memilih aku,
+          aku akan sangat bersyukur.
+          Aku akan berusaha menjaga kesempatan itu
+          sebaik mungkin.
+        </p>
+
+        <p>
+          Tapi kalau Kakak ternyata sudah menentukan pilihan
+          yang berbeda, aku tetap ingin Kakak bahagia.
+          Aku mungkin masih sayang, mungkin masih sulit
+          untuk menerima semuanya, tapi aku nggak ingin
+          kebahagiaan Kakak menjadi sesuatu yang harus
+          aku lawan.
+        </p>
+
+        <p>
+          Terima kasih karena pernah menyayangi aku.
+          Terima kasih karena pernah bertahan.
+          Terima kasih karena pernah memberikan aku
+          kesempatan berkali-kali, bahkan ketika aku
+          sendiri belum bisa menghargai kesempatan itu
+          dengan baik.
+        </p>
+
+        <p>
+          Maaf karena aku terlalu sering mengecewakan Kakak.
+          Maaf karena aku membuat Kakak lelah.
+          Maaf karena aku terlalu sering mengucapkan kata
+          "maaf" setelah melakukan kesalahan yang sama.
+        </p>
+
+        <p>
+          Aku nggak bisa mengubah semua yang sudah terjadi.
+          Tapi aku masih bisa memilih untuk belajar dari
+          semuanya dan menjadi lebih baik setelah ini.
+        </p>
+
+
+        <!-- BIBBLES -->
+
+        <div class="ending-image">
+
+          <img
+            src="bibbles.jfif"
+            alt="Bibbles"
+          >
+
+        </div>
+
+
+        <!-- PENUTUP -->
+
+        <div class="ending">
+
+          Aku nggak tahu apakah ini benar-benar akhir
+          dari kita atau masih ada sedikit kesempatan
+          untuk memperbaiki semuanya.
+
+          <br><br>
+
+          Kalau masih ada kesempatan itu,
+          aku ingin memperjuangkannya dengan cara yang
+          lebih baik.
+
+          <br><br>
+
+          Aku masih sayang sama Kakak.
+          Dan kalau Kakak masih mau,
+          aku ingin tetap sama Kakak.
+
+          <strong>
+            Aku masih memilih Kakak. 💙
+          </strong>
+
+          <br>
+
+          Apa pun keputusan Kakak nanti,
+          semoga Kakak selalu bahagia.
+
+        </div>
+
+
+        <!-- TANDA TANGAN -->
+
+        <div class="signature">
+
+          — Dari <strong>Bawel</strong>,
+          <br>
+
+          yang masih menyayangi Kakak 🤍
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+      💙 Untuk Kakak, dari seseorang yang masih
+      menyayangi Kakak. 💙
+
+    </div>
+
+  </div>
+
+</body>
+</html>
